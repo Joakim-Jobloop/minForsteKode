@@ -154,6 +154,15 @@ ul {
   border: 1px solid #e7eef7;
   box-shadow: var(--shadow);
 }
+.thumb-large {
+  width: 100%; /* tar hele bredden av kortet */
+  max-width: 100%;
+  height: auto; /* behold proporsjonene */
+  object-fit: contain; /* hele bildet vises */
+  border-radius: 12px;
+  border: 1px solid #e7eef7;
+  box-shadow: var(--shadow);
+}
 
 /* SEKSJONSTITLER */
 h2 {

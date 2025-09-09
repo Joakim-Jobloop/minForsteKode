@@ -6,6 +6,51 @@
     <title>Min første kode</title>
     <link rel="stylesheet" href="style/main.css" />
   </head>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lb hidden" aria-hidden="true">
+    <button class="lb-close" type="button" aria-label="Lukk fullskjerm">
+      ×
+    </button>
+    <img id="lightboxImg" alt="Forstørret bilde" />
+  </div>
+
+  <script>
+    // Lightbox logikk (vanilla JS)
+    (function () {
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lightboxImg");
+      const closeBtn = lb.querySelector(".lb-close");
+
+      function openLB(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || "";
+        lb.classList.remove("hidden");
+        lb.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeLB() {
+        lb.classList.add("hidden");
+        lb.setAttribute("aria-hidden", "true");
+        lbImg.src = "";
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e) => {
+        const t = e.target;
+        if (t.classList && t.classList.contains("lightboxable")) {
+          const full = t.getAttribute("data-full") || t.src;
+          openLB(full, t.alt);
+        }
+        // klikk utenfor bildet/close-knappen lukker
+        if (t === lb) closeLB();
+      });
+
+      closeBtn.addEventListener("click", closeLB);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLB();
+      });
+    })();
+  </script>
 
   <body class="homeBody">
     <header class="siteHeader">
@@ -85,12 +130,16 @@
           </ul>
         </article>
       </section>
-
       <section class="media card has-deco">
-        <h2>Småting</h2>
+        <h2>Siste ord!</h2>
         <div class="media-wrap">
-          <img src="public/wow.webp" alt="wow" class="thumb" loading="lazy" />
-          <video src="" autoplay loop muted playsinline class="thumb"></video>
+          <img
+            src="public/rip-css.png"
+            alt="RIP CSS"
+            class="thumb-large lightboxable"
+            data-full="public/rip-css.png"
+            loading="lazy"
+          />
         </div>
       </section>
     </main>
