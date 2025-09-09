@@ -14,8 +14,6 @@
   min-height: 100svh;
 }
 
-/* Header/nav følger samme stil som de andre sidene (definert i header.css) */
-
 /* Container/kort */
 .container {
   width: min(1100px, 92%);
@@ -98,7 +96,7 @@
   font: inherit;
 }
 
-.flexArea {
+.flexLab .flexArea {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -126,30 +124,12 @@
   background: #f7dc6f;
 }
 
-/* CodeBurgler dekor */
+/* Dekor tydelig */
 .deco {
-  position: absolute;
-  opacity: 0.09;
-  filter: grayscale(40%);
-  pointer-events: none;
+  opacity: 0.18 !important;
 }
-.deco-top-right {
-  top: 90px;
-  right: 6%;
-  width: 110px;
-  transform: rotate(10deg);
-}
-.deco-mid-left {
-  top: 52%;
-  left: 6%;
-  width: 120px;
-  transform: rotate(-8deg);
-}
-.deco-bottom {
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%) rotate(6deg);
-  width: 120px;
+.deco-strong {
+  opacity: 0.28 !important;
 }
 
 /* Responsivitet */

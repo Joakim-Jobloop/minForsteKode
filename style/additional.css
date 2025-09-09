@@ -92,3 +92,5 @@ footer p {
 section {
     animation: fadeIn 0.6s ease-out;
 }
+/* Ekstra småting / utils. Legg til hva du vil her. */
+.muted { color:#6b7785; }

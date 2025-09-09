@@ -12,7 +12,7 @@ header {
   border-bottom: 1px solid #eef2f7;
 }
 
-/* Logo/brand (valgfritt symbol) */
+/* Logo/brand */
 header .logo {
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@ header .logo {
   letter-spacing: 0.3px;
 }
 
-/* Hvis du bruker <img> i header fortsatt */
+/* Hvis du bruker <img> i header */
 header img {
   height: 48px;
   width: 48px;

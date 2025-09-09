@@ -21,15 +21,27 @@
     </header>
 
     <main class="container">
-      <!-- Dekor oppe -->
+      <!-- Dekor -->
       <img
         src="public/codeburgler.png"
         alt=""
-        class="deco deco-top-left"
+        class="deco deco-strong deco-md deco-top-left"
+        loading="lazy"
+      />
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-lg deco-mid-right"
+        loading="lazy"
+      />
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-lg deco-bottom-right"
         loading="lazy"
       />
 
-      <section class="intro card">
+      <section class="intro card has-deco has-deco-top-left">
         <h1>Ta kontakt</h1>
         <p>
           Har du spørsmål eller innspill? Fyll ut skjemaet eller bruk detaljene
@@ -37,17 +49,9 @@
         </p>
       </section>
 
-      <!-- Dekor midt -->
-      <img
-        src="public/codeburgler.png"
-        alt=""
-        class="deco deco-mid"
-        loading="lazy"
-      />
-
       <section class="grid-2">
         <form
-          class="card contactForm"
+          class="card contactForm has-deco"
           onsubmit="event.preventDefault(); alert('Takk! Skjemaet ble sendt (demo).');"
         >
           <div class="field">
@@ -91,7 +95,7 @@
           <button class="btnPrimary" type="submit">Send melding</button>
         </form>
 
-        <aside class="card contactInfo">
+        <aside class="card contactInfo has-deco">
           <h2>Kontaktinfo</h2>
           <ul>
             <li><strong>E-post:</strong> student@example.com</li>
@@ -108,14 +112,6 @@
           </div>
         </aside>
       </section>
-
-      <!-- Dekor nede -->
-      <img
-        src="public/codeburgler.png"
-        alt=""
-        class="deco deco-bottom-right"
-        loading="lazy"
-      />
     </main>
 
     <footer class="siteFooter">© 2025 – Master of Code</footer>

@@ -15,41 +15,6 @@
   min-height: 100svh;
 }
 
-.siteHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  padding: 0 24px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: #fff;
-  box-shadow: var(--shadow);
-}
-.brand {
-  text-decoration: none;
-  color: #111;
-  font-weight: 700;
-}
-.mainNav {
-  display: flex;
-  gap: 10px;
-}
-.navLink {
-  text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 10px;
-  color: #39424e;
-}
-.navLink:hover {
-  background: #f0f4f9;
-}
-.navLink.active {
-  background: #e6f2ff;
-  outline: 2px solid #cfe5ff;
-}
-
 .container {
   width: min(1000px, 90%);
   margin: 32px auto 64px;
@@ -136,37 +101,19 @@
   color: #39424e;
 }
 
+/* Dekor tydelig */
+.deco {
+  opacity: 0.18 !important;
+}
+.deco-strong {
+  opacity: 0.28 !important;
+}
+
 .siteFooter {
   width: 100%;
   text-align: center;
   padding: 22px 0;
   color: #6b7785;
-}
-
-/* CodeBurgler – flere plasseringer */
-.deco {
-  position: absolute;
-  opacity: 0.1;
-  filter: grayscale(40%);
-  pointer-events: none;
-}
-.deco-top-left {
-  top: 86px;
-  left: 6%;
-  width: 110px;
-  transform: rotate(-10deg);
-}
-.deco-mid {
-  top: 55%;
-  right: 8%;
-  width: 120px;
-  transform: rotate(6deg);
-}
-.deco-bottom-right {
-  bottom: 80px;
-  right: 8%;
-  width: 110px;
-  transform: rotate(-14deg);
 }
 
 @media (max-width: 900px) {

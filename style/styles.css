@@ -39,6 +39,7 @@ body {
   margin: 32px auto 64px;
   display: grid;
   gap: 24px;
+  position: relative;
 }
 .card {
   background: #fff;
@@ -109,6 +110,11 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
 .stack > * + * {
   margin-top: 10px;
 }
@@ -158,18 +164,6 @@ h2 {
   padding-bottom: 0.4rem;
 }
 
-/* ABOUT-SECTION LEGACY (behold som bakgrunn til “Om meg”-kortet hvis du vil) */
-section.aboutSection {
-  color: var(--text-color);
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    ),
-    url("../public/coolSword.png");
-  background-position: center;
-  background-size: cover;
-}
-
 /* FOOTER */
 .siteFooter {
   width: 100%;
@@ -178,41 +172,136 @@ section.aboutSection {
   color: #6b7785;
 }
 
-/* CODEBURGLER-DEKOR – flere diskrete plasseringer */
+/* === CodeBurgler global dekor & kort-vannmerker ========================== */
+
+/* Standard dekorbilde (mer synlig) */
 .deco {
   position: absolute;
-  opacity: 0.09;
-  filter: grayscale(40%);
+  opacity: 0.18; /* mer synlig enn før */
+  filter: grayscale(35%) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
   pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  transform-origin: center;
 }
+
+/* Ekstra synlig variant */
+.deco-strong {
+  opacity: 0.28;
+}
+
+/* Størrelser */
+.deco-sm {
+  width: 90px;
+}
+.deco-md {
+  width: 120px;
+}
+.deco-lg {
+  width: 160px;
+}
+
+/* Posisjons-presets */
 .deco-top-left {
   top: 86px;
   left: 6%;
-  width: 110px;
   transform: rotate(-10deg);
 }
-.deco-mid {
+.deco-top-right {
+  top: 86px;
+  right: 6%;
+  transform: rotate(10deg);
+}
+.deco-mid-left {
   top: 52%;
-  right: 8%;
-  width: 120px;
-  transform: rotate(6deg);
+  left: 6%;
+  transform: rotate(-8deg);
+}
+.deco-mid-right {
+  top: 52%;
+  right: 6%;
+  transform: rotate(8deg);
+}
+.deco-center {
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%) rotate(6deg);
+}
+.deco-bottom-left {
+  bottom: 90px;
+  left: 8%;
+  transform: rotate(12deg);
 }
 .deco-bottom-right {
   bottom: 90px;
   right: 8%;
-  width: 110px;
-  transform: rotate(-14deg);
+  transform: rotate(-12deg);
+}
+
+/* Diskré parallax ved hover */
+main:hover .deco {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Vannmerke inne i kort – legg klassen "has-deco" på card-elementet */
+.card.has-deco::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  width: 120px;
+  height: 120px;
+  background-image: url("../public/codeburgler.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.16;
+  filter: grayscale(35%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Variant for vannmerke oppe til venstre */
+.card.has-deco-top-left::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  width: 90px;
+  height: 90px;
+  background-image: url("../public/codeburgler.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.12;
+  filter: grayscale(35%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sørg for at innholdet flyter over vannmerket */
+.card,
+.card * {
+  position: relative;
+  z-index: 1;
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
   .hero {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 900px) {
   .grid-2 {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 600px) {
   .deco {
     display: none;
-  } /* Skjul dekor på mobil for renere layout */
+  } /* skjul dekor på veldig små skjermer */
 }
