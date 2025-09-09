@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: bisque;
+}
+
+h1 {
+  color: rgb(71, 25, 25);
+}
+
+main {
+  margin: 0 64px;
+}
+
+section {
+  border: 4px red dotted;
+  height: 100vh;
+  margin: 64px 0px;
+}
+
+section.aboutSection {
+  color: rgb(0, 0, 0);
+  /* background-color: rgb(169, 125, 209); */
+  background-image: url("../coolSword.png");
+  background-position: 100% 50%;
+}
+
+.headerLinks {
+}
+
+#hobbies {
+  text-decoration: underline;
+  /*! bruk denne veldig sjeldent */
+}

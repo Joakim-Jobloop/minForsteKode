@@ -9,46 +9,75 @@
     <!--! Ikke rør! Forteller om hvor mye som det skal være på nettsiden ved åpning -->
     <title>Document</title>
     <!--! Forteller hva som skal stå i tabben i nettleseren  -->
+    <link
+      rel="stylesheet"
+      href="style/main.css" />
   </head>
 
   <body>
+    <!--* Inline styling (KAN brukes, men foretrekkes ikke):  -->
+    <!-- <header 
+    style="background-color: brown"
+    > -->
     <header>
+      <div class="logo">LOGO</div>
+
       <nav>
-        <button>home</button>
-
-        <a href="./about.html">
-          <button>about</button>
+        <a href="">
+          <button class="navLink">home</button>
         </a>
-
-        <button>contact</button>
+        <a href="./about.html">
+          <button class="navLink">about</button>
+        </a>
+        <a href="#hobbies">
+          <button class="navLink">hobbier</button>
+        </a>
+        <a href="">
+          <button class="navLink">contact</button>
+        </a>
       </nav>
     </header>
     <h1>Min første kode i html</h1>
-    <h2>Om meg:</h2>
-    <p>Jeg liker å spille</p>
-    <p>Jeg liker å spise</p>
-    <p>Jeg liker å kode</p>
 
-    <h2>Hobbier:</h2>
-    <ul>
-      <li>Film</li>
-      <li>Mat/spise</li>
-      <li>Game</li>
-      <li>Koding</li>
-      <li>Spillutvikling</li>
-    </ul>
+    <main>
+      <section class="aboutSection">
+        <h2>Om meg:</h2>
+        <div>
+          <p>Jeg liker å spille</p>
+          <p>Jeg liker å spise</p>
+          <p>Jeg liker å kode</p>
+        </div>
+      </section>
 
-    <img
-      src="./wow.webp"
-      alt="gif of a kid saying wow" />
+      <section>
+        <h2 id="hobbies">Hobbier:</h2>
+        <ul>
+          <li>Film</li>
+          <li>Mat/spise</li>
+          <li>Game</li>
+          <li>Koding</li>
+          <li>Spillutvikling</li>
+        </ul>
+      </section>
 
-    <video
-      src=""
-      autoplay
-      loop></video>
+      <img
+        src="./wow.webp"
+        alt="gif of a kid saying wow" />
 
-    <div></div>
+      <video
+        src=""
+        autoplay
+        loop></video>
 
+      <div></div>
+    </main>
     <footer>copyright 2025 by master of code</footer>
   </body>
 </html>
+
+<!--* Style tag metoden for å style en nettside (ikke anbefalt):  -->
+<!-- <style>
+  body {
+    background-color: aquamarine;
+  }
+</style> -->
