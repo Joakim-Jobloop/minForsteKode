@@ -13,45 +13,6 @@
     </button>
     <img id="lightboxImg" alt="Forstørret bilde" />
   </div>
-
-  <script>
-    // Lightbox logikk (vanilla JS)
-    (function () {
-      const lb = document.getElementById("lightbox");
-      const lbImg = document.getElementById("lightboxImg");
-      const closeBtn = lb.querySelector(".lb-close");
-
-      function openLB(src, alt) {
-        lbImg.src = src;
-        lbImg.alt = alt || "";
-        lb.classList.remove("hidden");
-        lb.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
-      function closeLB() {
-        lb.classList.add("hidden");
-        lb.setAttribute("aria-hidden", "true");
-        lbImg.src = "";
-        document.body.style.overflow = "";
-      }
-
-      document.addEventListener("click", (e) => {
-        const t = e.target;
-        if (t.classList && t.classList.contains("lightboxable")) {
-          const full = t.getAttribute("data-full") || t.src;
-          openLB(full, t.alt);
-        }
-        // klikk utenfor bildet/close-knappen lukker
-        if (t === lb) closeLB();
-      });
-
-      closeBtn.addEventListener("click", closeLB);
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLB();
-      });
-    })();
-  </script>
-
   <body class="homeBody">
     <header class="siteHeader">
       <div class="logo">
@@ -135,6 +96,13 @@
         <div class="media-wrap">
           <img
             src="public/rip-css.png"
+            alt="RIP CSS"
+            class="thumb-large lightboxable"
+            data-full="public/rip-css.png"
+            loading="lazy"
+          />
+                    <img
+            src="public/codeburgler.png"
             alt="RIP CSS"
             class="thumb-large lightboxable"
             data-full="public/rip-css.png"
