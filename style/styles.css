@@ -1,38 +1,218 @@
+/* RESET/BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --text-color: #2c3e50;
+  --background-color: #ecf0f1;
+  --section-padding: clamp(16px, 3vw, 28px);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
 body {
-  background-color: bisque;
+  background-color: var(--background-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-h1 {
-  color: rgb(71, 25, 25);
+/* SIDESPESIFIKK bakgrunn på home */
+.homeBody {
+  background: radial-gradient(
+      1200px 500px at 120% -10%,
+      #dfe9f5 0%,
+      transparent 60%
+    ),
+    radial-gradient(900px 400px at -10% 110%, #eaf2fb 0%, transparent 60%),
+    var(--background-color);
 }
 
-main {
-  margin: 0 64px;
+/* CONTAINER + KORT */
+.container {
+  width: min(1100px, 92%);
+  margin: 32px auto 64px;
+  display: grid;
+  gap: 24px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: var(--section-padding);
 }
 
-section {
-  border: 4px red dotted;
-  height: 100vh;
-  margin: 64px 0px;
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.hero-text h1 {
+  color: var(--primary-color);
+  font-size: clamp(28px, 4vw, 40px);
+  text-transform: none;
+  letter-spacing: 0.2px;
+  margin-bottom: 8px;
+}
+.hero-text p {
+  color: #6b7785;
+}
+.hero-figure {
+  margin: 0;
+  text-align: center;
+}
+.hero-img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
 }
 
+/* KNAPPER */
+.btnPrimary {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(90deg, #3498db, #6ec1ff);
+  box-shadow: var(--shadow);
+}
+.btnGhost {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: #39424e;
+  background: #f0f4f9;
+  border: 1px solid #dce6f4;
+}
+
+/* GRID */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.stack > * + * {
+  margin-top: 10px;
+}
+
+/* LISTE */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.niceList li {
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  background: #f7fbff;
+  border: 1px solid #e7f1ff;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.niceList li:hover {
+  transform: translateY(-2px);
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* MEDIA */
+.media-wrap {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.thumb {
+  width: 260px;
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #e7eef7;
+  box-shadow: var(--shadow);
+}
+
+/* SEKSJONSTITLER */
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.4rem;
+}
+
+/* ABOUT-SECTION LEGACY (behold som bakgrunn til “Om meg”-kortet hvis du vil) */
 section.aboutSection {
-  color: rgb(0, 0, 0);
-  /* background-color: rgb(169, 125, 209); */
-  background-image: url("../public/coolSword.png");
-  background-position: 100% 50%;
+  color: var(--text-color);
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url("../public/coolSword.png");
+  background-position: center;
+  background-size: cover;
 }
 
-.headerLinks {
+/* FOOTER */
+.siteFooter {
+  width: 100%;
+  text-align: center;
+  padding: 22px 0;
+  color: #6b7785;
 }
 
-#hobbies {
-  text-decoration: underline;
-  /*! bruk denne veldig sjeldent */
+/* CODEBURGLER-DEKOR – flere diskrete plasseringer */
+.deco {
+  position: absolute;
+  opacity: 0.09;
+  filter: grayscale(40%);
+  pointer-events: none;
+}
+.deco-top-left {
+  top: 86px;
+  left: 6%;
+  width: 110px;
+  transform: rotate(-10deg);
+}
+.deco-mid {
+  top: 52%;
+  right: 8%;
+  width: 120px;
+  transform: rotate(6deg);
+}
+.deco-bottom-right {
+  bottom: 90px;
+  right: 8%;
+  width: 110px;
+  transform: rotate(-14deg);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .deco {
+    display: none;
+  } /* Skjul dekor på mobil for renere layout */
 }

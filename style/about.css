@@ -1,7 +1,205 @@
-body {
-  background-image: url("../public/coolSword.png");
-  background-size: 500px;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+/* Bakgrunn – rolig, lett tekstur */
+.aboutBody {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #2c3e50;
+  --muted: #6b7785;
+  --ring: rgba(52, 152, 219, 0.25);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  background: radial-gradient(
+      1200px 500px at 120% -10%,
+      #dfe9f5 0%,
+      transparent 60%
+    ),
+    radial-gradient(900px 400px at -10% 110%, #eaf2fb 0%, transparent 60%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100svh;
+}
+
+/* Header/nav (bruker eksisterende main.css/header.css for base) */
+.siteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.brand {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.mainNav {
+  display: flex;
+  gap: 10px;
+}
+.navLink {
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #39424e;
+}
+.navLink:hover {
+  background: #f0f4f9;
+}
+.navLink.active {
+  background: #e6f2ff;
+  outline: 2px solid #cfe5ff;
+}
+
+/* Layout */
+.container {
+  width: min(1100px, 90%);
+  margin: 32px auto 64px;
+  display: grid;
+  gap: 24px;
+}
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid #eef2f7;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.hero-figure {
+  margin: 0;
+  text-align: center;
+}
+.hero-img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.hero-text h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 8px;
+}
+.hero-text p {
+  color: var(--muted);
+}
+
+/* Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Skills */
+.skills {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+.skill {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.skill span {
+  font-weight: 600;
+}
+.bar {
+  background: #eef2f7;
+  border-radius: 999px;
+  overflow: hidden;
+  height: 10px;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #6ec1ff);
+}
+
+/* Timeline */
+.timeline ol {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+}
+.timeline li {
+  padding: 8px 10px;
+  border-left: 3px solid #cfe5ff;
+  margin-left: 6px;
+}
+
+/* Fun facts */
+.fun .facts {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.fact {
+  background: #f7fbff;
+  border: 1px solid #e7f1ff;
+  border-radius: 12px;
+  padding: 12px;
+  text-wrap: balance;
+}
+
+/* Dekorative CodeBurgler-plasseringer */
+.deco {
+  position: absolute;
+  opacity: 0.09;
+  filter: grayscale(40%);
+  pointer-events: none;
+}
+.deco-top-right {
+  top: 86px;
+  right: 8%;
+  width: 110px;
+  transform: rotate(8deg);
+}
+.deco-mid {
+  top: 52%;
+  left: 4%;
+  width: 120px;
+  transform: rotate(-6deg);
+}
+.deco-bottom-left {
+  bottom: 90px;
+  left: 8%;
+  width: 110px;
+  transform: rotate(12deg);
+}
+
+/* Footer */
+.siteFooter {
+  width: 100%;
+  text-align: center;
+  padding: 22px 0;
+  color: #6b7785;
+}
+
+/* Responsivitet */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .fun .facts {
+    grid-template-columns: 1fr;
+  }
+  .deco {
+    display: none;
+  } /* Skjul “tilfeldige” dekorbilder på mobil for renere uttrykk */
 }

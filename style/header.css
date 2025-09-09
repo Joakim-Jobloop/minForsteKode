@@ -2,51 +2,70 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  background-color: burlywood;
-  padding-inline: 24px;
+  height: 72px;
+  background-color: #ffffff;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #eef2f7;
 }
 
-header div.logo {
-  background-color: brown;
-  height: 60px;
-  width: 60px;
-}
-
-header img {
-  height: 60px;
-  width: 60px;
-}
-
-header > nav {
+/* Logo/brand (valgfritt symbol) */
+header .logo {
   display: flex;
-  gap: 18px;
   align-items: center;
-  /* height: 50%; */
-  /* background-color: orange; */
+  gap: 10px;
+}
+.brand {
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
-header > nav > a {
+/* Hvis du bruker <img> i header fortsatt */
+header img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+header img:hover {
+  transform: scale(1.06);
 }
 
-button {
-  padding: 8px 12px;
-  background-color: rgb(110, 63, 6);
-  color: white;
-  border: none;
-  box-shadow: 2px 2px 2px 0px rgb(30, 17, 2);
-  border-radius: 16px;
-  font-size: 20px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+/* NAV */
+.mainNav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
-
-button:hover {
-  background-color: rgb(63, 38, 7);
+.mainNav .navLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #39424e;
+  border: 1px solid #dce6f4;
+  background: #f7fbff;
+  transition: background 0.2s ease, transform 0.15s ease, color 0.2s ease,
+    border-color 0.2s ease;
 }
-
-button:active {
-  background-color: rgb(137, 84, 19);
+.mainNav .navLink:hover {
+  background: #eaf4ff;
+  transform: translateY(-1px);
 }
-
-button.navLink {
+.mainNav .navLink:active {
+  transform: translateY(0);
+}
+.mainNav .navLink.active {
+  background: #e6f2ff;
+  border-color: #b9d7ff;
+  color: #1f3a56;
 }

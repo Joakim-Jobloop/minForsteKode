@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/contact.css" />
+  </head>
+  <body class="contactBody">
+    <header class="siteHeader">
+      <div class="logo">
+        <a href="index.html" class="brand">Min Klasse</a>
+      </div>
+      <nav class="mainNav">
+        <a href="index.html" class="navLink">Home</a>
+        <a href="about.html" class="navLink">About</a>
+        <a href="flex.html" class="navLink">Hobbier</a>
+        <a href="contact.html" class="navLink active">Contact</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Dekor oppe -->
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-top-left"
+        loading="lazy"
+      />
+
+      <section class="intro card">
+        <h1>Ta kontakt</h1>
+        <p>
+          Har du spørsmål eller innspill? Fyll ut skjemaet eller bruk detaljene
+          under.
+        </p>
+      </section>
+
+      <!-- Dekor midt -->
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-mid"
+        loading="lazy"
+      />
+
+      <section class="grid-2">
+        <form
+          class="card contactForm"
+          onsubmit="event.preventDefault(); alert('Takk! Skjemaet ble sendt (demo).');"
+        >
+          <div class="field">
+            <label for="name">Navn</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Ditt navn"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="email">E-post</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="deg@eksempel.no"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="topic">Tema</label>
+            <select id="topic" name="topic">
+              <option>Generelt</option>
+              <option>Prosjekt</option>
+              <option>Tilbakemelding</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Melding</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Skriv meldingen her..."
+              required
+            ></textarea>
+          </div>
+          <button class="btnPrimary" type="submit">Send melding</button>
+        </form>
+
+        <aside class="card contactInfo">
+          <h2>Kontaktinfo</h2>
+          <ul>
+            <li><strong>E-post:</strong> student@example.com</li>
+            <li><strong>Telefon:</strong> +47 999 99 999</li>
+            <li><strong>Sted:</strong> Oslo, Norge</li>
+          </ul>
+          <div class="mapPlaceholder">
+            <span>Kartplassholder</span>
+          </div>
+          <div class="links">
+            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Portefølje">Portefølje</a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Dekor nede -->
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-bottom-right"
+        loading="lazy"
+      />
+    </main>
+
+    <footer class="siteFooter">© 2025 – Master of Code</footer>
+  </body>
+</html>
