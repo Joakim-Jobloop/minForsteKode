@@ -1,0 +1,139 @@
+/* Additional styles for enhanced visual appeal */
+.contact-section {
+  background: linear-gradient(135deg, var(--background-color) 0%, white 100%);
+  padding: 3rem 2rem;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-content p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.about-content {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hobby-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.hobby-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--background-color) 0%, white 100%);
+  border-left: 4px solid var(--accent-color);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+footer p {
+  font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  header nav {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .hobby-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.6s ease-out;
+}
+/* Ekstra småting / utils. Legg til hva du vil her. */
+.muted {
+  color: #6b7785;
+}
+/* Lightbox */
+.lb {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 9999; /* over alt */
+}
+.lb.hidden {
+  display: none;
+}
+
+.lb img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain; /* hele bildet vises */
+  background: #000; /* ingen hvit ramme rundt i mørk bakgrunn */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.lb-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.lb-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

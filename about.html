@@ -1,38 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="style/main.css" />
-    <link
-      rel="stylesheet"
-      href="style/about.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Om meg</title>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/about.css" />
   </head>
   <body class="aboutBody">
-    <header>
-      <nav>
-        <a href="./index.html"> <button>home</button></a>
-
-        <button>about</button>
-
-        <button>contact</button>
+    <header class="siteHeader">
+      <div class="logo">
+        <a href="index.html" class="brand">Min Klasse</a>
+      </div>
+      <nav class="mainNav">
+        <a href="index.html" class="navLink">Home</a>
+        <a href="about.html" class="navLink active">About</a>
+        <a href="flex.html" class="navLink">Hobbier</a>
+        <a href="contact.html" class="navLink">Contact</a>
       </nav>
     </header>
-    <h1>about page</h1>
-    <table border="1">
-      <tr>
-        <th>Navn</th>
-        <th>Alder</th>
-      </tr>
-      <tr>
-        <td>Ola</td>
-        <td>25</td>
-      </tr>
-    </table>
+
+    <main class="container">
+      <!-- Dekor -->
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-strong deco-md deco-top-right"
+        loading="lazy"
+      />
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-lg deco-mid-left"
+        loading="lazy"
+      />
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-strong deco-md deco-bottom-left"
+        loading="lazy"
+      />
+
+      <section class="hero card has-deco has-deco-top-left">
+        <div class="hero-text">
+          <h1>Hei! 👋</h1>
+          <p>
+            Jeg er en ny student som lærer HTML, CSS og JavaScript. Denne siden
+            er en ryddig og moderne introduksjon – uten dill.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img
+            src="public/wow.webp"
+            alt="wow"
+            class="hero-img"
+            loading="lazy"
+          />
+          <figcaption>Litt entusiasme må til.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid-2">
+        <article class="card has-deco">
+          <h2>Om meg</h2>
+          <p>
+            Liker å lære ved å bygge ting, holde koden enkel og strukturert, og
+            bruke tradisjonelle løsninger først – så forbedre stegvis.
+          </p>
+          <ul class="bullets">
+            <li>Fokus: HTML, CSS, JS (grunnleggende)</li>
+            <li>Jobber systematisk – små steg, hyppige tester</li>
+            <li>Verdsetter enkelhet > “flashy” kaos</li>
+          </ul>
+        </article>
+
+        <article class="card has-deco">
+          <h2>Ferdigheter – status</h2>
+          <div class="skills">
+            <div class="skill">
+              <span>HTML</span>
+              <div class="bar"><i style="width: 82%"></i></div>
+            </div>
+            <div class="skill">
+              <span>CSS</span>
+              <div class="bar"><i style="width: 70%"></i></div>
+            </div>
+            <div class="skill">
+              <span>JavaScript</span>
+              <div class="bar"><i style="width: 55%"></i></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="timeline card has-deco">
+        <h2>Veien videre</h2>
+        <ol>
+          <li>
+            <strong>Høst 2025:</strong> Grunnmur ferdig – semantikk, layout,
+            responsivitet.
+          </li>
+          <li>
+            <strong>Vår 2026:</strong> Mer JS: komponentmønstre, DOM, API.
+          </li>
+          <li>
+            <strong>Etterpå:</strong> Dypdykk i rammeverk når basis sitter.
+          </li>
+        </ol>
+      </section>
+
+      <section class="fun card has-deco">
+        <h2>Morsomme fakta</h2>
+        <div class="facts">
+          <div class="fact">📚 Lærer best ved å forklare andre.</div>
+          <div class="fact">🧩 Liker å splitte problemer i bittesmå biter.</div>
+          <div class="fact">🛠️ “Fiks det riktig, ikke raskt.”</div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

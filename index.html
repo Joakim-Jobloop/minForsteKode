@@ -2,78 +2,117 @@
 <html lang="no">
   <head>
     <meta charset="UTF-8" />
-    <!--! Ikke rør! Forteller hva slags type tegn som skal brukes på nettsiden -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <!--! Ikke rør! Forteller om hvor mye som det skal være på nettsiden ved åpning -->
-    <title>Document</title>
-    <!--! Forteller hva som skal stå i tabben i nettleseren  -->
-    <link
-      rel="stylesheet"
-      href="style/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Min første kode</title>
+    <link rel="stylesheet" href="style/main.css" />
   </head>
-
-  <body>
-    <!--* Inline styling (KAN brukes, men foretrekkes ikke):  -->
-    <!-- <header 
-    style="background-color: brown"
-    > -->
-    <header>
-      <!-- <div class="logo">LOGO</div> -->
-      <img
-        src="public/wow.webp"
-        alt="gif of a kid saying wow" />
-      <nav>
-        <a href="">
-          <button class="navLink">home</button>
-        </a>
-        <a href="./about.html">
-          <button class="navLink">about</button>
-        </a>
-        <a href="#hobbies">
-          <button class="navLink">hobbier</button>
-        </a>
-        <a href="">
-          <button class="navLink">contact</button>
-        </a>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lb hidden" aria-hidden="true">
+    <button class="lb-close" type="button" aria-label="Lukk fullskjerm">
+      ×
+    </button>
+    <img id="lightboxImg" alt="Forstørret bilde" />
+  </div>
+  <body class="homeBody">
+    <header class="siteHeader">
+      <div class="logo">
+        <a href="index.html" class="brand">Min Klasse</a>
+      </div>
+      <nav class="mainNav">
+        <a href="index.html" class="navLink active">Home</a>
+        <a href="about.html" class="navLink">About</a>
+        <a href="flex.html" class="navLink">Hobbier</a>
+        <a href="contact.html" class="navLink">Contact</a>
       </nav>
     </header>
-    <h1>Min første kode i html</h1>
 
-    <main>
-      <section class="aboutSection">
-        <h2>Om meg:</h2>
-        <div>
-          <p>Jeg liker å spille</p>
-          <p>Jeg liker å spise</p>
-          <p>Jeg liker å kode</p>
+    <main class="container">
+      <!-- CodeBurgler-dekor -->
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-strong deco-lg deco-top-left"
+        loading="lazy"
+      />
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-md deco-mid-right"
+        loading="lazy"
+      />
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-lg deco-bottom-right"
+        loading="lazy"
+      />
+
+      <section class="hero card has-deco has-deco-top-left">
+        <div class="hero-text">
+          <h1>Min første kode i HTML</h1>
+          <p>
+            Rett på sak: enkel struktur, ren stil og fokus på innhold. Ingen
+            jåleri.
+          </p>
+          <div class="hero-actions">
+            <a class="btnPrimary" href="about.html">Se About</a>
+            <a class="btnGhost" href="contact.html">Kontakt</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <img
+            src="public/wow.webp"
+            alt="wow"
+            class="hero-img"
+            loading="lazy"
+          />
+          <figcaption>Litt wow-faktor skader ingen.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid-2">
+        <article class="card has-deco">
+          <h2>Om meg</h2>
+          <div class="stack">
+            <p>Jeg liker å spille</p>
+            <p>Jeg liker å spise</p>
+            <p>Jeg liker å kode</p>
+          </div>
+        </article>
+
+        <article class="card has-deco">
+          <h2>Hobbier</h2>
+          <ul class="niceList">
+            <li>🎬 Film</li>
+            <li>🍔 Mat/spise</li>
+            <li>🎮 Game</li>
+            <li>💻 Koding</li>
+            <li>🕹️ Spillutvikling</li>
+          </ul>
+        </article>
+      </section>
+      <section class="media card has-deco">
+        <h2>Siste ord!</h2>
+        <div class="media-wrap">
+          <img
+            src="public/rip-css.png"
+            alt="RIP CSS"
+            class="thumb-large lightboxable"
+            data-full="public/rip-css.png"
+            loading="lazy"
+          />
+                    <img
+            src="public/codeburgler.png"
+            alt="RIP CSS"
+            class="thumb-large lightboxable"
+            data-full="public/rip-css.png"
+            loading="lazy"
+          />
         </div>
       </section>
-
-      <section>
-        <h2 id="hobbies">Hobbier:</h2>
-        <ul>
-          <li>Film</li>
-          <li>Mat/spise</li>
-          <li>Game</li>
-          <li>Koding</li>
-          <li>Spillutvikling</li>
-        </ul>
-      </section>
-
-      <img
-        src="public/wow.webp"
-        alt="gif of a kid saying wow" />
-
-      <video
-        src=""
-        autoplay
-        loop></video>
-
-      <div></div>
     </main>
-    <footer>copyright 2025 by master of code</footer>
+
+    <footer class="siteFooter">© 2025 – Master of Code</footer>
   </body>
 </html>
 

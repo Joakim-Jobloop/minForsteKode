@@ -1,0 +1,126 @@
+.contactBody {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #2c3e50;
+  --muted: #6b7785;
+  --accent: #3498db;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  background: radial-gradient(
+      900px 400px at 105% -10%,
+      #eaf2fb 0%,
+      transparent 60%
+    ),
+    var(--bg);
+  color: var(--text);
+  min-height: 100svh;
+}
+
+.container {
+  width: min(1000px, 90%);
+  margin: 32px auto 64px;
+  display: grid;
+  gap: 24px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: clamp(16px, 3vw, 28px);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+}
+
+.contactForm {
+  display: grid;
+  gap: 14px;
+}
+.field {
+  display: grid;
+  gap: 8px;
+}
+.field label {
+  font-weight: 600;
+}
+.field input,
+.field select,
+.field textarea {
+  border: 1px solid #dce6f4;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  outline: none;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #b9d7ff;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
+}
+.btnPrimary {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 700;
+  background: linear-gradient(90deg, #3498db, #6ec1ff);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.contactInfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: grid;
+  gap: 6px;
+}
+.mapPlaceholder {
+  height: 180px;
+  border: 1px dashed #c9d9ee;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #8aa3bf;
+  margin: 10px 0 16px;
+}
+.links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.links a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #f0f4f9;
+  color: #39424e;
+}
+
+/* Dekor tydelig */
+.deco {
+  opacity: 0.18 !important;
+}
+.deco-strong {
+  opacity: 0.28 !important;
+}
+
+.siteFooter {
+  width: 100%;
+  text-align: center;
+  padding: 22px 0;
+  color: #6b7785;
+}
+
+@media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .deco {
+    display: none;
+  }
+}
