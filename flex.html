@@ -1,48 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
-    <link
-      rel="stylesheet"
-      href="style/main.css" />
-    <link
-      rel="stylesheet"
-      href="style/flexPage.css" />
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hobbier</title>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/flexPage.css" />
   </head>
-  <body class="flexPage">
-    <header>
-      <!-- <div class="logo">LOGO</div> -->
-      <img
-        src="public/wow.webp"
-        alt="gif of a kid saying wow" />
-      <nav>
-        <a href="">
-          <button class="navLink">home</button>
-        </a>
-        <a href="./about.html">
-          <button class="navLink">about</button>
-        </a>
-        <a href="#hobbies">
-          <button class="navLink">hobbier</button>
-        </a>
-        <a href="">
-          <button class="navLink">contact</button>
-        </a>
+  <body class="flexBody">
+    <header class="siteHeader">
+      <div class="logo">
+        <a href="index.html" class="brand">Min Klasse</a>
+      </div>
+      <nav class="mainNav">
+        <a href="index.html" class="navLink">Home</a>
+        <a href="about.html" class="navLink">About</a>
+        <a href="flex.html" class="navLink active">Hobbier</a>
+        <a href="contact.html" class="navLink">Contact</a>
       </nav>
     </header>
 
-    <div class="flexArea levelAnswer">
-      <div class="box red"></div>
-      <div class="box green"></div>
-      <div class="box green"></div>
-      <div class="box green"></div>
-      <div class="box green"></div>
-      <div class="box yellow"></div>
-      <div class="box yellow"></div>
-    </div>
+    <main class="container">
+      <!-- CodeBurgler-dekor flere steder -->
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-top-right"
+        loading="lazy"
+      />
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-mid-left"
+        loading="lazy"
+      />
+
+      <section class="hero card">
+        <div class="hero-text">
+          <h1>Hobbier</h1>
+          <p>
+            Ryddig oversikt, enkle kort – og en liten flex-lekeplass nederst.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img
+            src="public/wow.webp"
+            alt="wow"
+            class="hero-img"
+            loading="lazy"
+          />
+          <figcaption>Ja, fortsatt litt wow.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid-3">
+        <article class="hobby card">
+          <h2>🎬 Film</h2>
+          <p>
+            Alt fra klassikere til ny sci-fi. Gjerne analyser og
+            behind-the-scenes.
+          </p>
+        </article>
+
+        <article class="hobby card">
+          <h2>🍔 Mat</h2>
+          <p>Enkelt, godt, og gjerne litt nerding på kjøkkenet.</p>
+        </article>
+
+        <article class="hobby card">
+          <h2>🎮 Gaming</h2>
+          <p>Strategi og co-op. Liker å forstå systemene – ikke bare vinne.</p>
+        </article>
+
+        <article class="hobby card">
+          <h2>💻 Koding</h2>
+          <p>Bygge små, rene ting. Lære ved å gjøre. Iterere – ikke stresse.</p>
+        </article>
+
+        <article class="hobby card">
+          <h2>🕹️ Spillutvikling</h2>
+          <p>Prototyper og mekanikker. Små eksperimenter > store luftslott.</p>
+        </article>
+
+        <article class="hobby card">
+          <h2>📷 Småprosjekter</h2>
+          <p>Bilder, små nettsider, små verktøy. Lav risiko, høy læring.</p>
+        </article>
+      </section>
+
+      <!-- CodeBurgler nederst -->
+      <img
+        src="public/codeburgler.png"
+        alt=""
+        class="deco deco-bottom"
+        loading="lazy"
+      />
+
+      <section class="flexLab card" id="hobbies">
+        <h2>Flex-lekeplass</h2>
+        <p class="muted">
+          En enkel visuell test av flex: pakk, gap, rekkefølge.
+        </p>
+
+        <div class="controls">
+          <label
+            >Retning:
+            <select id="dir">
+              <option value="row">row</option>
+              <option value="row-reverse">row-reverse</option>
+              <option value="column">column</option>
+              <option value="column-reverse">column-reverse</option>
+            </select>
+          </label>
+
+          <label
+            >Wrap:
+            <select id="wrap">
+              <option value="nowrap">nowrap</option>
+              <option value="wrap" selected>wrap</option>
+              <option value="wrap-reverse">wrap-reverse</option>
+            </select>
+          </label>
+
+          <label
+            >Justify:
+            <select id="justify">
+              <option value="flex-start" selected>flex-start</option>
+              <option value="center">center</option>
+              <option value="space-between">space-between</option>
+              <option value="space-around">space-around</option>
+              <option value="space-evenly">space-evenly</option>
+              <option value="flex-end">flex-end</option>
+            </select>
+          </label>
+
+          <label
+            >Align items:
+            <select id="align">
+              <option value="stretch" selected>stretch</option>
+              <option value="flex-start">flex-start</option>
+              <option value="center">center</option>
+              <option value="flex-end">flex-end</option>
+            </select>
+          </label>
+
+          <label
+            >Gap:
+            <input id="gap" type="range" min="0" max="40" value="12" />
+          </label>
+        </div>
+
+        <div class="flexArea" id="flexArea">
+          <div class="box red"></div>
+          <div class="box green"></div>
+          <div class="box green"></div>
+          <div class="box green"></div>
+          <div class="box green"></div>
+          <div class="box yellow"></div>
+          <div class="box yellow"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="siteFooter">© 2025 – Master of Code</footer>
+
+    <script>
+      // Enkelt kontrollpanel for flex-området
+      const area = document.getElementById("flexArea");
+      const dir = document.getElementById("dir");
+      const wrap = document.getElementById("wrap");
+      const justify = document.getElementById("justify");
+      const align = document.getElementById("align");
+      const gap = document.getElementById("gap");
+
+      function apply() {
+        area.style.flexDirection = dir.value;
+        area.style.flexWrap = wrap.value;
+        area.style.justifyContent = justify.value;
+        area.style.alignItems = align.value;
+        area.style.gap = gap.value + "px";
+      }
+      [dir, wrap, justify, align, gap].forEach((el) =>
+        el.addEventListener("input", apply)
+      );
+      apply();
+    </script>
   </body>
 </html>
