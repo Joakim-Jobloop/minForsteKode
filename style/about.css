@@ -1,0 +1,7 @@
+body {
+  background-image: url("../public/coolSword.png");
+  background-size: 500px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
